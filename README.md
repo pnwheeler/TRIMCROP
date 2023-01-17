@@ -15,7 +15,7 @@ The absolute positioning of rects + resizing is a bit hacky/wonky.
 
 ### Trim
 <p> <img width="337" height="auto" src="https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/adjust_timeline.gif"> </p>
-The trim tool uses QML's quickcontrols2 Slider{} for seeking and RangeSlider{} to demark start and end positions. When either handle is pressed, media playback is paused and the output seeks to the current position. 
+The trim tool uses QML's quickcontrols2 Slider{} for seeking and RangeSlider{} to demarcate start and end positions. When either handle is pressed, media playback is paused and the output seeks to the current position. 
 Some wonkyness in the video looping logic. The MediaPlayer component backend uses WMF by default & the exposed methods are pretty basic. 
 
 *Might update when the ffmpeg backend is released*
