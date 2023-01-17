@@ -1,33 +1,19 @@
 # TRIMCROP
 ![](https://github.com/pnwheeler/TRIMCROP/blob/main/TRIMCROP/TRIM_CROP.ico)
-### Qt6/QML app to trim and crop videos on desktop
-
 ## About
-Windows' Photos app doesn't have a cropping tool, so I wanted to see what I could come up with/learn some new things. 
-It basically uses Qt's QML qtquickcontrols components as a front end to ffmpeg (which is responsible for the actual video transcoding). 
+### Qt6/QML desktop app to trim and crop videos. Acts as a front end to configure parameters for ffmpeg's seek and filter options.
 
-### Crop
-<p> <img width="337" height="auto" src="https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/crop_move.gif"> </p>
-The crop region is made of several Rectangle{} components. The area can be positioned, and edges are moved separately.
-The absolute positioning of rects + resizing is a bit hacky/wonky. 
+| TRIM | CROP |
+| --- | --- |
+| ![trim gif](https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/adjust_timeline.gif) | ![crop gif](https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/crop_move.gif) | 
 
-*Might update in the future using ShapePath & add the ability to lock to aspect ratios/scale on corners.*
-
-### Trim
-<p> <img width="337" height="auto" src="https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/adjust_timeline.gif"> </p>
-The trim tool uses QML's quickcontrols2 Slider{} for seeking and RangeSlider{} to demarcate start and end positions. When either handle is pressed, media playback is paused and the output seeks to the current position. 
-Some wonkyness in the video looping logic. The MediaPlayer component backend uses WMF by default & the exposed methods are pretty basic. 
-
-*Might update when the ffmpeg backend is released*
-
-### Save
-<p> <img width="330" height="auto" src="https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/save.gif"> </p>
-Saving the video sends all the parameters(i.e. timestamps, file paths, crop positions/dimensions) to ffmpeg. 
-The Process component exposes Qt's QProcess class, & a few of it's methods, to start a program (ffmpeg) and pipe its stdout back to the app. 
-I configured "-progress" to send updates every .1/s for UI visualization(parsed from str_utils.js).
+## QProcess
+| SAVE |
+| --- |
+| <p align="center"> <img width="460" height="auto" src="https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/save.gif"> </p> |
+| Saving the video sends all the relevant arguments(i.e. timestamps, file paths, crop positions/dimensions) to ffmpeg. The Process component exposes Qt's QProcess class, & a few of it's methods, to execute the ffmpeg command. Sends updates 10 times/s to track transcoding progress on the UI |
 
 ## Notes
-1. Requires ffmpeg in PATH
-2. Made/tested-on Win 11 
+1. Requires ffmpeg
 
 
