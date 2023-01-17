@@ -23,8 +23,8 @@ Some wonkyness in the video looping logic. The MediaPlayer component backend use
 ### Save
 <p> <img width="330" height="auto" src="https://github.com/pnwheeler/TRIMCROP/blob/main/gifs/save.gif"> </p>
 Saving the video sends all the parameters(i.e. timestamps, file paths, crop positions/dimensions) to ffmpeg. 
-The Process component exposes Qt's QProcess class, & a few of it's methods, to run program(ffmpeg) and pipe its stdout back to the app. 
-I configured the command to send "-progress" updates every .1/s for UI visualization(progress output is parsed from str_utils.js).
+The Process component exposes Qt's QProcess class, & a few of it's methods, to start a program (ffmpeg) and pipe its stdout back to the app. 
+I configured "-progress" to send updates every .1/s for UI visualization(parsed from str_utils.js).
 
 ## Notes
 1. Requires ffmpeg in PATH
