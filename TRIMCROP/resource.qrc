@@ -1,0 +1,17 @@
+<RCC>
+    <qresource prefix="/">
+        <file>custom_qml/AudioSlider.qml</file>
+        <file>custom_qml/Button.qml</file>
+        <file>custom_qml/CropROI.qml</file>
+        <file>custom_qml/Edge.qml</file>
+        <file>custom_qml/PlaybackController.qml</file>
+        <file>js/str_utils.js</file>
+        <file>js/win_utils.js</file>
+        <file>svg/pause-outline.svg</file>
+        <file>svg/play-outline.svg</file>
+        <file>svg/sound-min.svg</file>
+        <file>svg/sound-off.svg</file>
+        <file>custom_qml/SeekSlider.qml</file>
+        <file>custom_qml/TrimSlider.qml</file>
+    </qresource>
+</RCC>
